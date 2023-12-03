@@ -1,1 +1,1 @@
-require 'daniel'.init()
+require("core").init()
