@@ -1,13 +1,21 @@
-local M = {}
+local config = function()
+	require("nvim-treesitter.configs").setup({
+		indent = {
+			enable = true,
+		},
+		autotag = {
+			enable = true,
+		},
+		auto_install = false,
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = false,
+		},
+	})
+end
 
-M.url = "https://github.com/nvim-treesitter/nvim-treesitter"
-M.branch = "master"
-M.commit = "0791b5ebb590a2d44e20640c52679df1fc42e8ab"
-M.name = "treesitter"
-M.opts = {
-  ensure_installed = {},
-  auto_install = false,
-  ignore_install = "all",
+return {
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	config = config
 }
-
-return M

@@ -1,14 +1,17 @@
 local M = {}
 
 M.config = {
-  fileencoding = "utf-8",
-  mouse = "a",
+  fileencoding = 'utf-8',
+  mouse = 'a',
   splitbelow = true,
   splitright = true,
   swapfile = false,
   number = true,
   relativenumber = true,
-  signcolumn = "yes",
+  signcolumn = 'yes',
+  colorcolumn = '80',
+  tabstop = 2,
+  shiftwidth = 2,
 }
 
 M.init = function()
