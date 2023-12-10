@@ -15,26 +15,7 @@ in {
     defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
-      mason-nvim
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
 
-      telescope-nvim
-      plenary-nvim
-      popup-nvim
-
-      catppuccin-nvim
-
-      harpoon
-      gitsigns-nvim
-      lualine-nvim
-      nerdcommenter
-      nvim-colorizer-lua
-      nvim-notify
-      nvim-ts-rainbow2
-      nvim-web-devicons
-
-      dotfiles
     ];
 
     extraConfig = ''
@@ -42,5 +23,13 @@ in {
           require 'daniel'.init()
       EOF
     '';
+
+    extraPackages = with pkgs; [
+      # LSP
+      lua-language-server
+      nodePackages."typescript-language-server"
+      gopls
+      jdt-language-server
+    ];
   };
 }

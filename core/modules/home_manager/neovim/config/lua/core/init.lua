@@ -14,7 +14,7 @@ local keymaps = require('core.keymaps')
 local lazy = require('core.lazy')
 
 M.init = function()
-	options.init()
+  options.init()
   keymaps.init()
   lazy.init()
 end

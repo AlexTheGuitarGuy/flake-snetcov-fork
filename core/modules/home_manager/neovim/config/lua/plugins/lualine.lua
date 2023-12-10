@@ -1,9 +1,8 @@
-local M = {}
+return {
+  'nvim-lualine/lualine.nvim',
 
-M.url = "https://github.com/nvim-lualine/lualine.nvim"
-M.dependencies = {
-	"nvim-tree/nvim-web-devicons"
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+  },
+  opts = {},
 }
-M.opts = {}
-
-return M

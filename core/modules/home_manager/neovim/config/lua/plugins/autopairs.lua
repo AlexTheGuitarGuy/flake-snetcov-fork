@@ -1,7 +1,5 @@
-local M = {}
-
-M.url = "https://github.com/windwp/nvim-autopairs"
-M.event = "InsertEnter"
-M.opts = {}
-
-return M
+return {
+  'windwp/nvim-autopairs',
+  event = 'InsertEnter',
+  opts = {},
+}

@@ -1,5 +1,3 @@
-local M = {}
-
 local servers = {
   lua_ls = {
     Lua = {
@@ -8,18 +6,12 @@ local servers = {
     },
   },
   tsserver = {},
-	gopls = {},
-	groovyls = {},
-	gradle_ls = {},
+  gopls = {},
+  groovyls = {},
+  gradle_ls = {},
 }
 
-M.url = 'https://github.com/neovim/nvim-lspconfig'
-M.dependencies = {
-  'hrsh7th/cmp-nvim-lsp',
-}
-M.event = { 'BufReadPre', 'BufNewFile' }
-M.cmd = 'LspInfo'
-M.config = function()
+local config = function()
   local lsp_zero = require('lsp-zero')
   lsp_zero.extend_lspconfig()
 
@@ -33,4 +25,12 @@ M.config = function()
   end
 end
 
-return M
+return {
+  'neovim/nvim-lspconfig',
+  dependencies = {
+    'hrsh7th/cmp-nvim-lsp',
+  },
+  event = { 'BufReadPre', 'BufNewFile' },
+  cmd = 'LspInfo',
+  config = config,
+}

@@ -1,5 +1,3 @@
-local M = {}
-
 local keys = function()
   local telescope = require('telescope.builtin')
   return {
@@ -20,12 +18,11 @@ local keys = function()
     },
   }
 end
-
-M.url = 'https://github.com/nvim-telescope/telescope.nvim'
-M.tag = '0.1.5'
-M.dependencies = {
-  'plenary.nvim',
+return {
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.5',
+  dependencies = {
+    'plenary.nvim',
+  },
+  keys = keys,
 }
-M.keys = keys
-
-return M

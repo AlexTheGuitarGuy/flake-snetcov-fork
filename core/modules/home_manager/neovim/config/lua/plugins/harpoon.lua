@@ -1,5 +1,3 @@
-local M = {}
-
 local keys = function()
   local harpoon = require('harpoon')
 
@@ -49,11 +47,11 @@ local keys = function()
   }
 end
 
-M.url = 'https://github.com/ThePrimeagen/harpoon'
-M.branch = 'harpoon2'
-M.dependencies = {
-  'plenary.nvim',
+return {
+  'ThePrimeagen/harpoon',
+  branch = 'harpoon2',
+  dependencies = {
+    'plenary.nvim',
+  },
+  keys = keys,
 }
-M.keys = keys
-
-return M

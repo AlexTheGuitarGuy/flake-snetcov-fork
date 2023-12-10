@@ -1,38 +1,38 @@
-local M = {}
+local config = function()
+  local lsp_zero = require('lsp-zero')
+  lsp_zero.extend_cmp()
 
-M.url = 'https://github.com/hrsh7th/nvim-cmp'
-M.event = 'InsertEnter'
-M.dependencies = {
-	'onsails/lspkind.nvim',
-	'L3MON4D3/LuaSnip',
-}
-M.config = function()
-	local lsp_zero = require('lsp-zero')
-	lsp_zero.extend_cmp()
+  local cmp = require('cmp')
+  local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-	local cmp = require('cmp')
-	local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-	local lspkind = require("lspkind")
-	cmp.setup({
-		sources = cmp.config.sources({
-			{ name = "nvim_lsp" },
-			{ name = "luasnip" },
-			{ name = "buffer" },
-			{ name = "path" },
-		}),
-		mapping = cmp.mapping.preset.insert({
-			['<CR>'] = cmp.mapping.confirm({ select = true }),
-			['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-			['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-		}),
-		formatting = {
-			format = lspkind.cmp_format({
-				maxwidth = 50,
-				ellipsis_char = "...",
-			})
-		},
-	})
+  local lspkind = require('lspkind')
+  cmp.setup({
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+      { name = 'buffer' },
+      { name = 'path' },
+    }),
+    mapping = cmp.mapping.preset.insert({
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+      ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+    }),
+    formatting = {
+      format = lspkind.cmp_format({
+        maxwidth = 50,
+        ellipsis_char = '...',
+      }),
+    },
+  })
 end
 
-return M
+return {
+  'hrsh7th/nvim-cmp',
+  event = 'InsertEnter',
+  dependencies = {
+    'onsails/lspkind.nvim',
+    'L3MON4D3/LuaSnip',
+  },
+  config = config,
+}
