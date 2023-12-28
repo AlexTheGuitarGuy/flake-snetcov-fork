@@ -45,9 +45,6 @@ M.n = {
 
 	-- Vertical split
 	['|'] = ':vsplit<CR>',
-
-	-- Explore
-	['<leader>e'] = ':Explore<CR>',
 }
 M.v = {
 	-- Stay in indent mode
