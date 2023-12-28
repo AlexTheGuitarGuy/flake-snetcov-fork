@@ -48,12 +48,9 @@ local opts = function()
 			formatting.stylua,
 			formatting.prettier,
 			formatting.black,
-			formatting.stylua,
 			code_actions.refactoring,
-
 			formatting.eslint_d,
 			diagnostics.eslint_d,
-
 			completion.spell,
 		},
 		on_attach = function(client, bufnr)
