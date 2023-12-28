@@ -2,65 +2,68 @@ local M = {}
 
 local options = { noremap = true, silent = true }
 local apply_keymaps = function(mode, keymaps)
-  for key, command in pairs(keymaps) do
-    vim.keymap.set(mode, key, command, options)
-  end
+	for key, command in pairs(keymaps) do
+		vim.keymap.set(mode, key, command, options)
+	end
 end
 
 M.n = {
-  -- No highlight
-  ['<leader>no'] = ':noh<CR>',
-  -- Let J stay in place
-  ['J'] = 'mzJ`z',
-  -- Let cursor stay in center
-  ['<C-d>'] = '<C-d>zz',
-  ['<C-u>'] = '<C-u>zz',
-  -- Also let cursor stay in center when searching
-  ['n'] = 'nzzzv',
-  ['N'] = 'Nzzzv',
-  -- Yank in clipboard
-  ['<leader>y'] = '"+y',
-  ['<leader>Y'] = '"+Y',
-  -- Worst thing in the universe
-  ['Q'] = '<nop>',
-	 -- Yank in clipboard
-  ['y'] = '"+y',
-  ['Y'] = '"+Y',
+	-- No highlight
+	['<leader>H'] = ':noh<CR>',
+	-- Let J stay in place
+	['J'] = 'mzJ`z',
+	-- Let cursor stay in center
+	['<C-d>'] = '<C-d>zz',
+	['<C-u>'] = '<C-u>zz',
+	-- Also let cursor stay in center when searching
+	['n'] = 'nzzzv',
+	['N'] = 'Nzzzv',
+	-- Yank in clipboard
+	['<leader>y'] = '"+y',
+	['<leader>Y'] = '"+Y',
+	-- Worst thing in the universe
+	['Q'] = '<nop>',
+	-- Yank in clipboard
+	['y'] = '"+y',
+	['Y'] = '"+Y',
 	-- Quick save and quit
-  ['<C-s>'] = ':w!<CR>',
-  ['<C-q>'] = ':q!<CR>',
-  -- Better window navigation
-  ['<C-h>'] = '<C-w>h',
-  ['<C-j>'] = '<C-w>j',
-  ['<C-k>'] = '<C-w>k',
+	['<C-s>'] = ':w!<CR>',
+	['<C-q>'] = ':q!<CR>',
+	-- Better window navigation
+	['<C-h>'] = '<C-w>h',
+	['<C-j>'] = '<C-w>j',
+	['<C-k>'] = '<C-w>k',
 	['<C-l>'] = '<C-w>l',
-  -- Resize with arrows
-  ['<A-Up>'] = ':resize +2<CR>',
-  ['<A-Down>'] = ':resize -2<CR>',
-  ['<A-Left>'] = ':vertical resize -2<CR>',
-  ['<A-Right>'] = ':vertical resize +2<CR>',
+	-- Resize with arrows
+	['<A-Up>'] = ':resize +2<CR>',
+	['<A-Down>'] = ':resize -2<CR>',
+	['<A-Left>'] = ':vertical resize -2<CR>',
+	['<A-Right>'] = ':vertical resize +2<CR>',
 	-- Move text up and down
-  ['<A-j>'] = ':m .+1<CR>==',
-  ['<A-k>'] = ':m .-2<CR>==',
+	['<A-j>'] = ':m .+1<CR>==',
+	['<A-k>'] = ':m .-2<CR>==',
 
--- Vertical split
-['|'] = ':vsplit<CR>',
+	-- Vertical split
+	['|'] = ':vsplit<CR>',
+
+	-- Explore
+	['<leader>e'] = ':Explore<CR>',
 }
 M.v = {
-  -- Stay in indent mode
+	-- Stay in indent mode
 	['<'] = '<gv',
 	['>'] = '>gv',
-  -- Move text up and down
-  -- Yank in clipboard
-  ['y'] = '"+y',
-	 ['<A-j>'] = ":m '>+1<CR>gv=gv",
-['<A-k>'] = ":m '<-2<CR>gv=gv",
-['p'] = '"_dP',
+	-- Move text up and down
+	-- Yank in clipboard
+	['y'] = '"+y',
+	['<A-j>'] = ":m '>+1<CR>gv=gv",
+	['<A-k>'] = ":m '<-2<CR>gv=gv",
+	['p'] = '"_dP',
 }
 M.x = {
-  -- Move text up and down
-  -- Yank in clipboard
-  ['y'] = '"+y',
+	-- Move text up and down
+	-- Yank in clipboard
+	['y'] = '"+y',
 	['J'] = ":m '>+1<CR>gv=gv",
 	['K'] = ":m '<-2<CR>gv=gv",
 	['<A-j>'] = ":m '>+1<CR>gv=gv",
@@ -68,18 +71,18 @@ M.x = {
 }
 M.i = {
 	-- Press jk fast to exit insert mode
-	 ['jk'] = '<ESC>',
-  ['kj'] = '<ESC>',
+	['jk'] = '<ESC>',
+	['kj'] = '<ESC>',
 }
 
 M.init = function()
-  vim.keymap.set('', '<Space>', '<Nop>', options)
-  vim.g.mapleader = ' '
-  vim.g.maplocalleader = ' '
-  apply_keymaps('n', M.n)
-  apply_keymaps('v', M.v)
-  apply_keymaps('x', M.x)
-  apply_keymaps('i', M.i)
+	vim.keymap.set('', '<Space>', '<Nop>', options)
+	vim.g.mapleader = ' '
+	vim.g.maplocalleader = ' '
+	apply_keymaps('n', M.n)
+	apply_keymaps('v', M.v)
+	apply_keymaps('x', M.x)
+	apply_keymaps('i', M.i)
 end
 
 return M
