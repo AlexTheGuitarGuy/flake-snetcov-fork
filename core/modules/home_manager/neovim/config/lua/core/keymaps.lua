@@ -23,26 +23,53 @@ M.n = {
   ['<leader>Y'] = '"+Y',
   -- Worst thing in the universe
   ['Q'] = '<nop>',
+	 -- Yank in clipboard
+  ['y'] = '"+y',
+  ['Y'] = '"+Y',
+	-- Quick save and quit
+  ['<C-s>'] = ':w!<CR>',
+  ['<C-q>'] = ':q!<CR>',
+  -- Better window navigation
+  ['<C-h>'] = '<C-w>h',
+  ['<C-j>'] = '<C-w>j',
+  ['<C-k>'] = '<C-w>k',
+	['<C-l>'] = '<C-w>l',
+  -- Resize with arrows
+  ['<A-Up>'] = ':resize +2<CR>',
+  ['<A-Down>'] = ':resize -2<CR>',
+  ['<A-Left>'] = ':vertical resize -2<CR>',
+  ['<A-Right>'] = ':vertical resize +2<CR>',
+	-- Move text up and down
+  ['<A-j>'] = ':m .+1<CR>==',
+  ['<A-k>'] = ':m .-2<CR>==',
+
+-- Vertical split
+['|'] = ':vsplit<CR>',
 }
 M.v = {
   -- Stay in indent mode
-  ['<'] = '<gv',
-  ['>'] = '>gv>',
+	['<'] = '<gv',
+	['>'] = '>gv',
   -- Move text up and down
-  ['<C-j>'] = ":m '>+1<CR>gv=gv",
-  ['<C-k>'] = ":m '<-2<CR>gv=gv",
-  ['p'] = '"_dP',
   -- Yank in clipboard
-  ['<Leader>y'] = '"+y',
+  ['y'] = '"+y',
+	 ['<A-j>'] = ":m '>+1<CR>gv=gv",
+['<A-k>'] = ":m '<-2<CR>gv=gv",
+['p'] = '"_dP',
 }
 M.x = {
   -- Move text up and down
-  ['J'] = ":move '>+1<CR>gv-gv",
-  ['K'] = ":move '<-2<CR>gv-gv",
-  ['<A-j>'] = ":move '>+1<CR>gv-gv",
-  ['<A-k>'] = ":move '<-2<CR>gv-gv",
   -- Yank in clipboard
-  ['<Leader>y'] = '"+y',
+  ['y'] = '"+y',
+	['J'] = ":m '>+1<CR>gv=gv",
+	['K'] = ":m '<-2<CR>gv=gv",
+	['<A-j>'] = ":m '>+1<CR>gv=gv",
+	['<A-k>'] = ":m '<-2<CR>gv=gv",
+}
+M.i = {
+	-- Press jk fast to exit insert mode
+	 ['jk'] = '<ESC>',
+  ['kj'] = '<ESC>',
 }
 
 M.init = function()
@@ -52,6 +79,7 @@ M.init = function()
   apply_keymaps('n', M.n)
   apply_keymaps('v', M.v)
   apply_keymaps('x', M.x)
+  apply_keymaps('i', M.i)
 end
 
 return M
