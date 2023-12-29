@@ -17,28 +17,28 @@ local keys = function()
       mode = 'n',
     },
     {
-      '<C-A-u>',
+      '<C-U>',
       function()
         harpoon:list():select(1)
       end,
       mode = 'n',
     },
     {
-      '<C-A-i>',
+      '<C-I>',
       function()
         harpoon:list():select(2)
       end,
       mode = 'n',
     },
     {
-      '<C-A-o>',
+      '<C-O>',
       function()
         harpoon:list():select(3)
       end,
       mode = 'n',
     },
     {
-      '<C-A-p>',
+      '<C-P>',
       function()
         harpoon:list():select(4)
       end,
