@@ -12,6 +12,9 @@ M.config = {
   colorcolumn = '80',
   tabstop = 2,
   shiftwidth = 2,
+  expandtab = true,
+  smartindent = true,
+  scrolloff = 10,
 }
 
 M.init = function()
