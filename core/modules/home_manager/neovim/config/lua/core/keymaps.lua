@@ -48,6 +48,9 @@ M.n = {
 
   -- Open image with feh
   ['<leader>i'] = ':!feh %<CR>',
+
+  ['<leader>c'] = ':Copilot disable<CR>',
+  ['<leader>C'] = ':Copilot enable<CR>'
 }
 M.v = {
   -- Stay in indent mode
