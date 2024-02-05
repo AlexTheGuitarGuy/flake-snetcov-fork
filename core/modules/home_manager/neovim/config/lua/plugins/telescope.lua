@@ -12,6 +12,11 @@ local keys = function()
       mode = 'n',
     },
     {
+      '<leader>fu',
+      telescope.grep_string,
+      mode = 'n',
+    },
+    {
       '<leader>gf',
       telescope.git_files,
       mode = 'n',

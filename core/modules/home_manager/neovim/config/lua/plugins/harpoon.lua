@@ -10,7 +10,7 @@ local keys = function()
       mode = 'n',
     },
     {
-      '<leader>he',
+      '<leader>hl',
       function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end,
