@@ -8,6 +8,8 @@ local apply_keymaps = function(mode, keymaps)
 end
 
 M.n = {
+  -- Alpha
+  ["<leader>a"] = ":Alpha<CR>",
   -- No highlight
   ["<leader>H"] = ":noh<CR>",
   -- Let J stay in place
