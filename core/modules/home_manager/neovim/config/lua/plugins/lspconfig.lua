@@ -1,11 +1,22 @@
 local servers = {
+  cssls = {},
+  html = {},
+  jsonls = {},
+  tsserver = {},
+  rust_analyzer = {},
+  yamlls = {},
+  dockerls = {},
+  eslint = {},
+  graphql = {},
+  tailwindcss = {},
+  svelte = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
-  tsserver = {},
+
   gopls = {},
   groovyls = {},
   gradle_ls = {},
@@ -46,7 +57,13 @@ local config = function()
       vim.lsp.buf.format({
         async = true,
         filter = function(client)
-          return client.name ~= "tsserver"
+          local exclude_servers = { "tsserver", "html" }
+          for i = 1, #exclude_servers do
+            if client.name == exclude_servers[i] then
+              return false
+            end
+          end
+          return true
         end,
       })
     end, opts)
