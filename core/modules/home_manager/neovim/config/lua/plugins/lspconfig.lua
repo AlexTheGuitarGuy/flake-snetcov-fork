@@ -1,4 +1,5 @@
 local servers = {
+  bashls = {},
   cssls = {},
   html = {},
   jsonls = {},

@@ -7,6 +7,7 @@ return {
   config = function()
     require("mason-lspconfig").setup({
       "angularls",
+      "beautysh",
       "cssls",
       "html",
       "jsonls",

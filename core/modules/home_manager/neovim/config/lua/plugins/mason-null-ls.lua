@@ -8,6 +8,7 @@ return {
   lazy = false,
   config = function()
     require("mason-null-ls").setup({
+      "beautysh",
       "prettier",
       "prettierd",
       "eslint_d",
