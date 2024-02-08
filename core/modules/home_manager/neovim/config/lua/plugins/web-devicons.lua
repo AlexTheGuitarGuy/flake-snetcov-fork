@@ -1,3 +1,14 @@
 return {
-  'nvim-tree/nvim-web-devicons',
+  "kyazdani42/nvim-web-devicons",
+  config = function()
+    require("nvim-web-devicons").setup({
+      override = {
+        toml = {
+          icon = "",
+          color = "#808080",
+          name = "Toml",
+        },
+      },
+    })
+  end,
 }
