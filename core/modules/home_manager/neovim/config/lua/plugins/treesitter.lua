@@ -1,5 +1,5 @@
 local config = function()
-  require('nvim-treesitter.configs').setup({
+  require("nvim-treesitter.configs").setup({
     indent = {
       enable = true,
     },
@@ -15,7 +15,7 @@ local config = function()
 end
 
 return {
-  'nvim-treesitter/nvim-treesitter',
+  "nvim-treesitter/nvim-treesitter",
   lazy = false,
   config = config,
 }

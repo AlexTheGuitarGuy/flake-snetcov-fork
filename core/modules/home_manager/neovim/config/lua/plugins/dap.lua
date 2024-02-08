@@ -1,45 +1,45 @@
 local keys = function()
-  local dap = require('dap')
+  local dap = require("dap")
   return {
     {
-      '<F5>',
+      "<F5>",
       function()
         dap.continue()
       end,
-      mode = 'n',
+      mode = "n",
     },
     {
-      '<F9>',
+      "<F9>",
       function()
         dap.toggle_breakpoint()
       end,
-      mode = 'n',
+      mode = "n",
     },
     {
-      '<F10>',
+      "<F10>",
       function()
         dap.step_over()
       end,
-      mode = 'n',
+      mode = "n",
     },
     {
-      '<F11>',
+      "<F11>",
       function()
         dap.step_into()
       end,
-      mode = 'n',
+      mode = "n",
     },
     {
-      '<F12>',
+      "<F12>",
       function()
         dap.step_out()
       end,
-      mode = 'n',
+      mode = "n",
     },
   }
 end
 
 return {
-  'mfussenegger/nvim-dap',
+  "mfussenegger/nvim-dap",
   keys = keys,
 }
