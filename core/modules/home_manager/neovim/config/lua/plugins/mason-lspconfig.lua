@@ -4,7 +4,7 @@ return {
     "williamboman/mason.nvim",
     "neovim/nvim-lspconfig",
   },
-  config = function()
+  --[[ config = function()
     require("mason-lspconfig").setup({
       "angularls",
       "beautysh",
@@ -24,5 +24,5 @@ return {
       "tailwindcss",
       "lua_ls",
     })
-  end,
+  end, ]]
 }

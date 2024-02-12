@@ -17,6 +17,7 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  csharp_ls = {},
 
   gopls = {},
   groovyls = {},
@@ -58,7 +59,7 @@ local config = function()
       vim.lsp.buf.format({
         async = true,
         filter = function(client)
-          local exclude_servers = { "tsserver", "html", "lua_ls " }
+          local exclude_servers = { "tsserver", "html", "lua_ls" }
           for i = 1, #exclude_servers do
             if client.name == exclude_servers[i] then
               return false

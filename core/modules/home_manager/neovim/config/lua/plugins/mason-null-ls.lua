@@ -6,7 +6,7 @@ return {
     "nvimtools/none-ls.nvim",
   },
   lazy = false,
-  config = function()
+  --[[ config = function()
     require("mason-null-ls").setup({
       "beautysh",
       "prettier",
@@ -18,6 +18,7 @@ return {
       "stylua",
       "nxls",
       "rustywind",
+      "csharpier",
     })
-  end,
+  end, ]]
 }
