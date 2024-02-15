@@ -60,18 +60,7 @@ local opts = function()
           buffer = bufnr,
           callback = function()
             -- async_formatting(bufnr)
-            vim.lsp.buf.format({
-              async = true,
-              filter = function(client)
-                local exclude_servers = { "tsserver", "html", "lua_ls" }
-                for i = 1, #exclude_servers do
-                  if client.name == exclude_servers[i] then
-                    return false
-                  end
-                end
-                return true
-              end,
-            })
+Format_without_lsp()
           end,
         })
       end

@@ -24,6 +24,21 @@ local servers = {
   gradle_ls = {},
 }
 
+function Format_without_lsp()
+  vim.lsp.buf.format({
+    async = true,
+    filter = function(client)
+      for key, _ in pairs(servers) do
+        if client.name == key then
+          return false
+        end
+      end
+
+      return true
+    end,
+  })
+end
+
 local config = function()
   local lsp_zero = require("lsp-zero")
   local util = require("lspconfig.util")
@@ -56,18 +71,7 @@ local config = function()
       vim.lsp.buf.references()
     end, opts)
     vim.keymap.set("n", "<leader>lf", function()
-      vim.lsp.buf.format({
-        async = true,
-        filter = function(client)
-          local exclude_servers = { "tsserver", "html", "lua_ls" }
-          for i = 1, #exclude_servers do
-            if client.name == exclude_servers[i] then
-              return false
-            end
-          end
-          return true
-        end,
-      })
+      Format_without_lsp()
     end, opts)
     vim.keymap.set("n", "<leader>li", ":LspInfo<CR>", opts)
     vim.keymap.set("n", "<leader>la", function()
