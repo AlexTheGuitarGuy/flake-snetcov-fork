@@ -14,7 +14,7 @@ local open_image_under_cursor = function()
   end
 end
 
-return {
+--[[ return {
   "nvim-tree/nvim-tree.lua",
   config = function()
     require("nvim-tree").setup({
@@ -52,4 +52,5 @@ return {
     vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
     vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
   end,
-}
+} ]]
+return {}

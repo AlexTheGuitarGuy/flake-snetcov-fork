@@ -19,6 +19,7 @@ return {
       "nxls",
       "rustywind",
       "csharpier",
+      "shfmt"
     })
   end, ]]
 }

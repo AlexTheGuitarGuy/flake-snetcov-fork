@@ -10,6 +10,10 @@ end
 M.n = {
   -- Alpha
   ["<leader>a"] = ":Alpha<CR>",
+
+  -- Outline
+  ["<leader>o"] = ":Outline<CR>",
+
   -- No highlight
   ["<leader>H"] = ":noh<CR>",
   -- Let J stay in place
@@ -25,9 +29,6 @@ M.n = {
   ["<leader>Y"] = '"+Y',
   -- Worst thing in the universe
   ["Q"] = "<nop>",
-  -- Yank in clipboard
-  ["y"] = '"+y',
-  ["Y"] = '"+Y',
   -- Quick save and quit
   ["<C-s>"] = ":w!<CR>",
   ["<C-q>"] = ":q!<CR>",
@@ -52,8 +53,8 @@ M.n = {
   ["<leader>i"] = ":!feh %<CR>",
 
   -- Copilot
-  ["<leader>c"] = ":Copilot disable<CR>",
-  ["<leader>C"] = ":Copilot enable<CR>",
+  --[[ ["<leader>c"] = ":Copilot disable<CR>",
+  ["<leader>C"] = ":Copilot enable<CR>", ]]
 
   -- Zen mode
   ["<leader>z"] = ":ZenMode<CR>",
@@ -64,7 +65,7 @@ M.v = {
   [">"] = ">gv",
   -- Move text up and down
   -- Yank in clipboard
-  ["y"] = '"+y',
+  -- ["y"] = '"+y',
   ["<A-j>"] = ":m '>+1<CR>gv=gv",
   ["<A-k>"] = ":m '<-2<CR>gv=gv",
   ["p"] = '"_dP',
@@ -72,7 +73,7 @@ M.v = {
 M.x = {
   -- Move text up and down
   -- Yank in clipboard
-  ["y"] = '"+y',
+  -- ["y"] = '"+y',
   ["J"] = ":m '>+1<CR>gv=gv",
   ["K"] = ":m '<-2<CR>gv=gv",
   ["<A-j>"] = ":m '>+1<CR>gv=gv",
@@ -82,6 +83,8 @@ M.i = {
   -- Press jk fast to exit insert mode
   ["jk"] = "<ESC>",
   ["kj"] = "<ESC>",
+  ["JK"] = "<ESC>",
+  ["KJ"] = "<ESC>",
 }
 
 M.init = function()
