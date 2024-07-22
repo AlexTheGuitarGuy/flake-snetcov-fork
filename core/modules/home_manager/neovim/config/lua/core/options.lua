@@ -1,5 +1,35 @@
 local M = {}
 
+vim.cmd("highlight TabLineColor guifg=#9BD199") -- Dark: #9BD199, Light: #5D805C
+
+function _G.Tabline()
+  local s = ""
+  for i = 1, vim.fn.tabpagenr("$") do
+    -- Add tab page number
+    s = s .. "%" .. i .. "T"
+    -- Add the file name with full path
+    local buflist = vim.fn.tabpagebuflist(i)
+    local winnr = vim.fn.tabpagewinnr(i)
+    s = s .. " %#TabLineColor#" .. vim.fn.fnamemodify(vim.fn.bufname(buflist[winnr]), ":.") .. " "
+    -- Highlight the current tab
+    if i == vim.fn.tabpagenr() then
+      s = s .. "%#TabLineSel#"
+    else
+      s = s .. "%#TabLine#"
+    end
+  end
+  return s
+end
+
+-- Update tabline on buffer changes
+vim.api.nvim_create_augroup("UpdateTabline", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "TabEnter" }, {
+  group = "UpdateTabline",
+  callback = function()
+    vim.o.tabline = "%!v:lua.Tabline()"
+  end,
+})
+
 M.config = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -13,6 +43,7 @@ M.config = {
   pumheight = 10, -- pop up menu height
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
   showtabline = 2, -- always show tabs
+  tabline = Tabline(),
   smartcase = true, -- smart case
   smartindent = true, -- make indenting smarter again
   splitbelow = true, -- force all horizontal splits to go below current window
