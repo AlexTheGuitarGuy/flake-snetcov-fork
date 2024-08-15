@@ -1,6 +1,6 @@
 local M = {}
 
-vim.cmd("highlight TabLineColor guifg=#9BD199") -- Dark: #9BD199, Light: #5D805C
+vim.cmd("highlight TabLineColor guifg=#5D805C") -- Dark: #9BD199, Light: #5D805C
 
 function _G.Tabline()
   local s = ""
