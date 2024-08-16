@@ -12,14 +12,11 @@ return {
       "prettier",
       "prettierd",
       "eslint_d",
-      "firefox-debug-adapter",
       "gitlint",
       "black",
       "stylua",
       "nxls",
       "rustywind",
-      "csharpier",
-      "shfmt"
     })
   end, ]]
 }
