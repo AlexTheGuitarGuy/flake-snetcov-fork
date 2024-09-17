@@ -5,7 +5,7 @@ local config = function()
   local cmp = require("cmp")
   local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-  local lspkind = require("lspkind")
+  -- local lspkind = require("lspkind")
   cmp.setup({
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
