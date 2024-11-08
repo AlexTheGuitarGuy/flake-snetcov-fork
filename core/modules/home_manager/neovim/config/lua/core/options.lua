@@ -1,7 +1,5 @@
 local M = {}
 
-vim.cmd("highlight TabLineColor guifg=#9BD199") -- Dark: #9BD199, Light: #5D805C
-
 function _G.Tabline()
   local s = ""
   for i = 1, vim.fn.tabpagenr("$") do

@@ -5,7 +5,7 @@ local keys = function()
     {
       "<leader>ha",
       function()
-        harpoon:list():append()
+        harpoon:list():add()
       end,
       mode = "n",
     },

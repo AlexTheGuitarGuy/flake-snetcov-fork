@@ -58,6 +58,10 @@ M.n = {
 
   -- Zen mode
   ["<leader>z"] = ":ZenMode<CR>",
+
+  ["<leader>tc"] = ":TSContextToggle<CR>",
+
+  ["<leader>e"] = ":silent !explorer.exe $(wslpath -w %:p:h)<CR><CR>",
 }
 M.v = {
   -- Stay in indent mode
