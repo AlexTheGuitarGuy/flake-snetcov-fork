@@ -24,7 +24,7 @@ local config = function()
         maxwidth = 50,
         ellipsis_char = "...",
       }), ]]
-      format = require("tailwindcss-colorizer-cmp").formatter,
+      -- format = require("tailwindcss-colorizer-cmp").formatter,
     },
   })
 end

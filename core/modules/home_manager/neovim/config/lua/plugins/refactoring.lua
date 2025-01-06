@@ -1,5 +1,5 @@
 return {
-  "ThePrimeagen/refactoring.nvim",
+  --[[ "ThePrimeagen/refactoring.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
@@ -57,5 +57,5 @@ return {
       "Inline Variable",
       mode = "i",
     },
-  },
+  }, ]]
 }

@@ -9,19 +9,19 @@ local servers = {
   dockerls = {},
   eslint = {},
   graphql = {},
-  tailwindcss = {},
-  svelte = {},
+  -- tailwindcss = {},
+  -- svelte = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
-  csharp_ls = {},
+  -- csharp_ls = {},
 
-  gopls = {},
+  --[[ gopls = {},
   groovyls = {},
-  gradle_ls = {},
+  gradle_ls = {}, ]]
 }
 
 function Format_without_lsp()
