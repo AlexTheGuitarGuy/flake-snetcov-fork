@@ -5,7 +5,7 @@ local open_image_under_cursor = function()
     local image_extensions = { "png", "jpg", "jpeg", "gif", "bmp", "svg" }
 
     if vim.tbl_contains(image_extensions, file_extension) then
-      vim.fn.system(string.format("feh %s", vim.fn.shellescape(node.absolute_path)))
+      vim.fn.system(string.format("gwenview %s", vim.fn.shellescape(node.absolute_path)))
     else
       print("Not an image file")
     end

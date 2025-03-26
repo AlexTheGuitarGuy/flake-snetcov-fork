@@ -17,6 +17,9 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  gopls = {},
+  buf_ls = {},
+
   -- csharp_ls = {},
 
   --[[ gopls = {},

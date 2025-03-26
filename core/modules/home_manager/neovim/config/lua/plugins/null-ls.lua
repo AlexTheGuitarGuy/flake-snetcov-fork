@@ -47,6 +47,9 @@ local opts = function()
         filetypes = { "lua" },
         args = { "--indent-width", "2", "--indent-type", "Spaces", "-" },
       }),
+      -- formatting.gci,
+      formatting.gofumpt,
+      formatting.buf,
       code_actions.refactoring,
       --[[ formatting.eslint_d,
       diagnostics.eslint_d,
@@ -60,7 +63,7 @@ local opts = function()
           buffer = bufnr,
           callback = function()
             -- async_formatting(bufnr)
-Format_without_lsp()
+            Format_without_lsp()
           end,
         })
       end

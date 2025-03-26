@@ -49,8 +49,8 @@ M.n = {
   -- Vertical split
   ["|"] = ":vsplit<CR>",
 
-  -- Open image with feh
-  ["<leader>i"] = ":!feh %<CR>",
+  -- Open image
+  ["<leader>i"] = ":silent !gwenview % >/dev/null 2>&1 &<CR>",
 
   -- Copilot
   --[[ ["<leader>c"] = ":Copilot disable<CR>",
